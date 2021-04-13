@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+/* 版心990*140*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li,ol{
+    list-style: none;
+}
+img{
+    vertical-align: middle;
+}
+body{
+    min-width: 990px;
+
+}
+
+a,a:hover,a:active,a:visited,a:link{
+    text-decoration: none;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+
+/*导航栏*/
+header{
+    width: 100%;
+}
+.headd{
+    width: 100%;
+    /* border: 1px solid red; */
+    background-color: rgb(230, 230, 230);
+}
+.select{
+    width: 990px;
+    height: 31px;
+    line-height: 31px;
+    /* border: 1px solid black; */
+    margin: 0 auto;
+}
+.syou{
+    width: 74%;
+}
+.syou>li{
+    float: left;
+    padding: 0 0 0 8px;
+    color: gray;
+    position: relative;
+    cursor: pointer;
+}
+.syou>li::selection{
+    background: transparent;
+}
+.syou li::selection,.syou span::selection{
+    background: transparent;
+}
+.free{
+    margin-left:10px;
+    color: red;
+}
+.syou>li:nth-child(1){
+    width: 138px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.glyphicon-menu-down{
+    font-size: 12px;
+    transform: scale(0.6);
+}
+.shu{
+    font-weight: lighter;
+    font-size: 12px;
+    margin-left: 8px;
+}
+.down{
+    display: none;
+    z-index: 1000;
+}
+.li1{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 31px;
+    left: 8px;
+    border: 1px solid red;
+    background-color: white;
+}
+.a1{
+    display: inline-block;
+    width: 68px;
+}
+.a1:hover{
+    background-color: white;
+}
+.l1:hover .down,.l2:hover .down,.l3:hover .down,.l4:hover .down{
+    display: block;
+}
+.li2{
+    width: 180px;
+    height: 100px;
+    position: absolute;
+    top: 31px;
+    left: 8px;
+    border: 1px solid red;
+    background-color: white;
+}
+.li3{
+    width: 180px;
+    height: 100px;
+    position: absolute;
+    top: 31px;
+    right: 10px;
+    border: 1px solid red;
+    background-color: white;
+}
+.li4{
+    width: 990px;
+    height: 220px;
+    position: absolute;
+    top: 31px;
+    right: -95px;
+    border: 1px solid red;
+    background-color: white;
+}
+
+/*购物车内容*/
+.back{
+    width: 100%;
+    height: 100%;
+}
+.title{
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+.home{
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 46% 0;
+    color: chocolate;
+    cursor: pointer;
+}
+/*购物车没有物品*/
+.content1{
+    margin: 40px auto;
+    font-size: 20px;
+    display: none;
+    text-align: center;
+}
+.indexs{
+    color: chocolate;
+    cursor: pointer;
+}
+/*购物车有物品*/
+.content2{
+    margin: 40px auto;
+    width: 990px;
+    /* height: 100px; */
+    border: 1px solid red;
+}
+.contop{
+    background-color: skyblue;
+    height: 80px;
+    width: 100%;
+    position: relative;
+}
+.all{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.fan{
+    background-color: rgb(206, 78, 78);
+    color: #fff;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+}
+.concont{
+    width: 100%;
+    background-color:rgb(224, 224, 224) ;
+    margin: 0;
+    overflow: hidden;
+}
+.concont>li{
+    width: 100%;
+    position: relative;
+    margin: 10px 0;
+}
+.concont input{
+    margin-left:10px;
+    margin-right: 10px;
+}
+.concont img{
+    width: 130px;
+}
+.prices{
+    height: 80%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    top: 10px;
+    left: 180px;
+}
+.prices>span:nth-child(1){
+    font-size: 18px;
+}
+.prices>span:nth-child(2){
+    color: red;
+    font-size: 20px;
+}
+.prices button{
+    background-color: rgb(206, 78, 78);
+    color: #fff;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    margin-right: 10px;
+}
+.numbers{
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+.numbers button{
+    font-size: 20px;
+    width:30px;
+    height: 30px;
+    border: transparent;
+}
+.jian{
+    border-radius: 10px 0 0 10px;
+}
+.jia{
+    border-radius: 0 10px 10px 0;
+}
+.numbers span{
+    margin: 0 10px 0 10px;
+}
+.allprice{
+    display: flex;
+    justify-content: flex-end;
+}
