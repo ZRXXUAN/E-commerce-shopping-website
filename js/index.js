@@ -185,10 +185,42 @@ $('.reClose').on('click',()=>{
 
 
 
-
 //头部和右部导航栏
-$('window').scrollTop(
-    ()=>{
-        console.log();
+$(window).scroll(function(){
+    if($(document).scrollTop() > 470){
+        $('.fixedSel').slideDown();
+        $('.floorNav').css({"position":"fixed","top":"200px"});
+    }else{
+        $('.fixedSel').slideUp();
+        $('.floorNav').css({"position":"absolute","top":"0"});
     }
-);
+});
+$('.floorNav').on('click',(e)=>{
+    if(e.target.getAttribute('name') === 'sha'){
+        //元素距离页面的高度减去元素距离窗口的高度
+        $('html').animate({'scrollTop':`${$('.contentAll').offset().top-200}`},1000)
+    }
+    if(e.target.getAttribute('name') === 'youxuan'){
+        //元素距离页面的高度减去元素距离窗口的高度
+        $('html').animate({'scrollTop':`${$('.specialSelBack').offset().top-200}`},1000)
+    }
+    if(e.target.getAttribute('name') === 'guangchang'){
+        //元素距离页面的高度减去元素距离窗口的高度
+        $('html').animate({'scrollTop':`${$('.channels').offset().top-200}`},1000)
+    }
+    if(e.target.getAttribute('name') === 'tuijian'){
+        //元素距离页面的高度减去元素距离窗口的高度
+        $('html').animate({'scrollTop':`${$('.contentAll').offset().top-200}`},1000)
+        $(document).scrollTop(($('.contentAll').offset().top-200));
+    }
+    if(e.target.getAttribute('name') === 'kefu'){
+        //元素距离页面的高度减去元素距离窗口的高度
+        console.log('客服');
+    }
+    if(e.target.getAttribute('name') === 'ding'){
+        //元素距离页面的高度减去元素距离窗口的高度
+        $('html').animate({'scrollTop':`0`},1000)
+    }
+})
+
+
