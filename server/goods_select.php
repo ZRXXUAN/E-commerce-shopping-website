@@ -6,7 +6,7 @@ $userName = $_POST['userName'];
 
 $link = mysqli_connect($host, $user, $pwd, $dbname, $port);
 
-$sql = "SELECT `id` FROM `user3` WHERE  `name` = '{$userName}' ";
+$sql = "SELECT `id` FROM `user` WHERE  `name` = '{$userName}' ";
 
 $result = mysqli_query($link, $sql);
 

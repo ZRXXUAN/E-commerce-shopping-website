@@ -38,13 +38,14 @@ h1{
 }
 .bigGlass{
   display: none;
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
   position: absolute;
   top: 30px;
   left: 353px;
-  background-size: 600px 600px;
+  background-size: 1200px 1200px;
   background-position-x: 0;
   background-position-y: 0;
+  background-repeat: no-repeat;
   z-index: 10000;
 }

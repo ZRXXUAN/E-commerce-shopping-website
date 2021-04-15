@@ -62,7 +62,7 @@ pJQuery( './server/goods_detail.php' , 'post' , { goods_id: urlObj.goods_id } , 
   // 将字符串结果写入到标签中
   $('.container').html(str);
   console.log();
-  $('.bigGlass').css({'background-image':`url(${res.goods_small_logo})`})
+  $('.bigGlass').css({'background-image':`url(${res.goods_big_logo})`})
 })
 
 
@@ -111,7 +111,7 @@ $('.container').on('click', '[name="cart"]', function () {
   }
 })
 //放大镜
-$('.container').on('mouseenter', '.media-left', (e) => {
+$('.container').on('mouseenter', '.media-object', (e) => {
   $('.mask').css({display:"block"});
   $('.bigGlass').css({display:"block"});
   //获取鼠标移动的坐标

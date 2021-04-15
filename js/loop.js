@@ -13,7 +13,7 @@ loopcl.innerHTML = str;
 let str1 = '';
 for(var i = 0;i<=7;i++){
     str1+=
-        i===0 ? `<li class="active" index="${i}"></li>` : `<li index="${i}"></li>`
+        i===0 ? `<li class="activess" index="${i}"></li>` : `<li index="${i}"></li>`
     ;
 }
 loopcUl.innerHTML = str1;
@@ -35,9 +35,9 @@ mouseMove()
 
 function clearC(){
     loopLi.forEach(item=>{
-        item.classList.remove('active');
+        item.classList.remove('activess');
     })
-    loopLi[start].classList.add('active');
+    loopLi[start].classList.add('activess');
     loopImg.forEach(item=>{
         item.classList.remove('actor');
     })
@@ -49,9 +49,9 @@ function clickdot(){
         if(e.target.tagName === 'LI'){
             console.log(e.target.getAttribute('index')-0);
             loopLi.forEach(item=>{
-                item.classList.remove('active');
+                item.classList.remove('activess');
             })
-            loopLi[e.target.getAttribute('index')-0].classList.add('active');
+            loopLi[e.target.getAttribute('index')-0].classList.add('activess');
             loopImg.forEach(item=>{
                 item.classList.remove('actor');
             })
@@ -126,9 +126,9 @@ function autoloop(){
 //红点更随
 function followDot(){
     loopLi.forEach(item=>{
-        item.classList.remove('active');
+        item.classList.remove('activess');
     })
-    loopLi[start].classList.add('active');
+    loopLi[start].classList.add('activess');
 }
 //鼠标移入移出
 function mouseMove(){

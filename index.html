@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="never">
     <title>Document</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="../../bootstrap-3.3.7/dist/css/bootstrap.min.css">
@@ -22,7 +23,7 @@
                         <input type="text" placeholder="输入你想搜索的内容" class="inpSelect1"><button
                             class="glyphicon glyphicon-search"></button>
                     </p>
-                    <button id="shopcar">我的购物车</button>
+                    <button class="shopcar">我的购物车</button>
                 </div>
             </div>
         </div>
@@ -68,7 +69,7 @@
                         <input type="text" placeholder="输入你想搜索的内容" class="inpSelect1" name="" id=""><button
                             class="glyphicon glyphicon-search"></button>
                     </p>
-                    <button id="shopcar">我的购物车</button>
+                    <button class="shopcar">我的购物车</button>
                     <div class="ercode"></div>
                 </div>
             </div>
@@ -77,9 +78,15 @@
     <section>
         <!-- 轮播 -->
         <div class="loop">
-            <div class="guangG">
-                <img src="//img10.360buyimg.com/img/jfs/t1/174000/11/2707/123803/606ebe83E3157a007/388c748572a83e43.png.webp"
-                    alt="">
+            <div class="advertising">
+                <div class="guangG">
+                    <img src="//img12.360buyimg.com/img/jfs/t1/161489/27/18347/200666/607515ebE1d5a19db/4f929f974d4a9b59.png"
+                        alt="">
+                </div>
+                <div class="tuizhan">
+                    <img src="//img10.360buyimg.com/img/jfs/t1/175414/30/3740/109992/60751608E03857a0d/907ea2574bbd8a85.jpg"
+                        alt="">
+                </div>
             </div>
             <div class="loopl">
                 <ul class="listz">
@@ -87,7 +94,7 @@
                     <li class="child">童装玩具</li>
                     <li class="home">家装建材</li>
                     <li class="baby">奶粉尿裤</li>
-                    <li class="other">其他产品</li>
+                    <li class="other">其他</li>
                 </ul>
             </div>
             <div class="loopc">
@@ -138,7 +145,9 @@
                     <button>PLUS会员</button>
                 </div>
                 <div class="texts">
-                    <p><a class="fl">京东快报</a><a class="fr">更多&gt;</a></p>
+                    <p><span class="fl">京东快报</span><a
+                            href="https://kuaibao.jd.com/?ids=247469505,247601860,239213036,246420325"
+                            class="fr">更多&gt;</a></p>
                 </div>
                 <ul class="loopconts">
                     <li>
@@ -295,35 +304,70 @@
                     <ul>
                     </ul>
                 </div>
+                <img src="./image/r1.jpeg" alt="">
             </div>
             <!-- 右侧楼层导航 -->
             <nav class="floorNav">
-                <li><a name="sha" href="javascript:;">京东秒杀</a></li>
-                <li><a name="youxuan" href="javascript:;">特色优选</a></li>
-                <li><a name="guangchang" href="javascript:;">频道广场</a></li>
-                <li><a name="tuijian" href="javascript:;">为你推荐</a></li>
-                <li><a name="kefu" href="javascript:;">客服</a></li>
-                <li><a name="ding" href="javascript:;">返回顶部</a></li>
+                <li class="ll1"><a name="sha" href="javascript:;">京东秒杀</a></li>
+                <li class="ll2"><a name="youxuan" href="javascript:;">特色优选</a></li>
+                <li class="ll3"><a name="guangchang" href="javascript:;">频道广场</a></li>
+                <li class="ll4"><a name="tuijian" href="javascript:;">为你推荐</a></li>
+                <li class="ll5"><a name="kefu" href="javascript:;">客服</a></li>
+                <li class="ll6"><a name="ding" href="javascript:;">返回顶部</a></li>
             </nav>
         </div>
 
-
         <!-- 特色优选 -->
         <div class="specialSelBack">
+            <div class="spcialtitle">
+                <h3 class="spcialtitle1">特色优选</h3>
+            </div>
             <div class="spcialSelCen1">
-                特色优选
+                <img src="./image/z1.png" alt="">
+                <img src="./image/z2.png" alt="">
+                <img src="./image/z3.png" alt="">
             </div>
         </div>
 
         <!-- 频道广场 -->
         <div class="channels">
+            <div class="spcialtitle">
+                <h3 class="spcialtitle1">频道广场</h3>
+            </div>
             <div class="chennel1">
-                频道广场
+                <img src="./image/p1.png" alt="">
+                <img src="./image/p2.png" alt="">
+                <img src="./image/p3.png" alt="">
+            </div>
+        </div>
+
+        <!-- 推荐 -->
+        <div class="recommends">
+            <div class="spcialtitle">
+                <h3 class="spcialtitle1">为你推荐</h3>
+            </div>
+            <nav class="navs">
+                <li index="1">家居生活</li>
+                <li index="2">手工DIY</li>
+                <li index="3">时尚搭配</li>
+                <li index="4">美妆造型</li>
+                <li index="5">食品酒水</li>
+                <li index="6">童装玩具</li>
+                <li index="7">家装建材</li>
+                <li index="8">奶粉尿裤</li>
+                <li index="9">其他</li>
+            </nav>
+            <div class="recommend1">
+                <ul></ul>
+                <ul></ul>
+                <ul></ul>
+                <ul></ul>
             </div>
         </div>
     </section>
     <footer></footer>
     <script src="../jquery.min.js"></script>
+    <script src="../ajax.js"></script>
     <script src="../tools.js"></script>
     <script src="./js/loop.js"></script>
     <script src="./js/index.js"></script>

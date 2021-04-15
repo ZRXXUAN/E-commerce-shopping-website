@@ -7,6 +7,7 @@ ul,ol,li{
 }
 li.list-item {
     width: 24.1%;
+    height: 628px;
     float: left;
     margin-right: 10px;
   }
@@ -39,4 +40,12 @@ li.list-item {
     text-align: center;
     margin: 50px auto;
     font-family:cursive;
+  }
+  .container{
+    width: 1190px;
+    margin: 0 auto;
+    min-width: 1190px;
+  }
+  .container ul{
+    overflow: hidden;
   }
