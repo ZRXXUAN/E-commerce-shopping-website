@@ -172,7 +172,7 @@ function activeSet() {
             item.bool = !item.bool;
         })
         localStorage.setItem('cart', JSON.stringify(datas));
-        activeSet()
+        activeSet();
     })
 
 
@@ -180,17 +180,21 @@ function activeSet() {
     $('.buy1').click(function () {
         datas[$(this).attr('index')].bool = $(this).prop('checked');
         localStorage.setItem('cart', JSON.stringify(datas));
-        activeSet()
+        activeSet();
     })
 
     //不要了
-    $('.nobuy').click(() => {
+    $('.nobuy').click(function() {
         if (datas.length === 0) {
             kong();
         } else {
             datas.splice($(this).attr('index'), 1);
             localStorage.setItem('cart', JSON.stringify(datas));
         }
+        activeSet();
+        if (datas.length === 0) {
+            kong();
+        } 
     })
 
 
