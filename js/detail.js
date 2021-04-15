@@ -4,7 +4,7 @@ console.log(urlObj);
 // 定义变量 存储 res 也就是 ajax请求 响应的商品信息对象数据
 let msgObj;
 //  2, 向后端PHP程序发送请求
-pJQuery( './server/goods_detail.php' , 'post' , { goods_id: urlObj.goods_id } , 'json' )
+pJQuery( '../server/goods_detail.php' , 'post' , { goods_id: urlObj.goods_id } , 'json' )
 .catch(()=>{
   alert('页面崩溃了呜呜呜。。。。。还是回首页吧');
   window.location.href = './index.html';

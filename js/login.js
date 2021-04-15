@@ -91,7 +91,7 @@ function text(){
 //登陆判断
 function logins(){
     if(switch1===true&&switch2===true&&switch3===true){
-        pJQuery( './server/goods_login.php' , 'post' , {userName:$('[name="username"]').val(),userPwd:$('[name="pwd"]').val()} , 'json' )
+        pJQuery( '../server/goods_login.php' , 'post' , {userName:$('[name="username"]').val(),userPwd:$('[name="pwd"]').val()} , 'json' )
         .then(res=>{
             
             //登陆成功

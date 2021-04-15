@@ -9,7 +9,7 @@ $('[name="username"]').on('focus', () => {
 }).on('blur', () => {
     $('[name="username"]')[0].setAttribute('placeholder', '请输入账号');
     $.ajax({
-        url: './server/goods_select.php',
+        url: '../server/goods_select.php',
         type: 'post',
         data: { userName: $('[name="username"]').val() },
         dataType: 'json',
@@ -52,7 +52,7 @@ let str = /^\D{0,6}$/
 $('[name="username"]').on('input', function () {
     // console.log(($('[name="username"]').val()==='')); 
     $.ajax({
-        url: './server/goods_select.php',
+        url: '../server/goods_select.php',
         type: 'post',
         data: { userName: $('[name="username"]').val() },
         dataType: 'json',
@@ -136,7 +136,7 @@ function text() {
 function logins() {
 
     if (switch1 === true && switch2 === true && switch3 === true) {
-        pJQuery( './server/goods_res.php' ,'post' ,  {userName: $('[name="username"]').val(),userPwd: $('[name="pwd"]').val()} , 'json' )
+        pJQuery( '../server/goods_res.php' ,'post' ,  {userName: $('[name="username"]').val(),userPwd: $('[name="pwd"]').val()} , 'json' )
         .then(res => {
             console.log(res);
             //登陆成功

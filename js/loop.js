@@ -6,7 +6,7 @@ const loopcl = document.querySelector('.loopcl');
 let str = '';
 for(let i = 0;i<=7;i++){
     str+=
-        i===0  ? ` <img class="actor" src="./image/${i+1}.jpg">` : `<img src="./image/${i+1}.jpg">
+        i===0  ? ` <img class="actor" src="../image/${i+1}.jpg">` : `<img src="../image/${i+1}.jpg">
         `;
 }
 loopcl.innerHTML = str;

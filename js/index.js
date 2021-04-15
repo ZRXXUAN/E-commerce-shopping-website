@@ -379,7 +379,7 @@ $('.navs').on('click', (e) => {
         // 设定个数
         let page = 1;
         let line = 24;
-        pJQuery('./server/goods_list.php', 'get', { cat_one_id: e.target.innerHTML, line: line, page: page }, 'json')
+        pJQuery('../server/goods_list.php', 'get', { cat_one_id: e.target.innerHTML, line: line, page: page }, 'json')
             .catch(() => {
                 alert('页面崩溃了呜呜呜。。。。。还是回首页吧');
                 window.location.href = './index.html';

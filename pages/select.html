@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索页</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <!-- 导入 分页显示插件的 css外部文件 -->
+    <link rel="stylesheet" href="../jquery-pagination/pagination.css">
+</head>
+
+<body>
+    <h1></h1>
+    <div class="container">
+        <!-- 内容,根据服务器响应的数据,动态渲染生成 -->
+        <ul></ul>
+    </div>
+    <div class="pagi">
+        <!-- 分页显示div标签 -->
+        <div class="page m-style"></div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="../jquery-pagination/jquery.pagination.js"></script>
+    <script src="../js/tools.js"></script>
+    <script>
+
+
+        const urlObj = getUrlVal();
+        $('h1').html(urlObj.keyword);
+        console.log(urlObj);
+
+
+        let page = 1;
+
+        // 根据实际项目需求,设定每页显示数据数量
+        // 目前随便写一个8
+        let line = 8;
+
+        // 调用函数 , 当前page的数值是 1
+        setPage();
+        function setPage() {
+            pJQuery('../server/select_goods.php', 'post', { value: urlObj.keyword , page: page , line:line }, 'json')
+                .catch(() => {
+                    alert('页面崩溃了呜呜呜。。。。。还是回首页吧');
+                    window.location.href = './index.html';
+                }).then(res => {
+                    console.log(res);
+
+                    // 动态渲染生成页面
+                    let str = '';
+                    res.data.forEach(item => {
+                        str += `
+            <li class="list-item" height="612px">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <ol class="breadcrumb">
+                    <li><a href="#">${item.cat_one_id}</a></li>
+                    <li><a href="#">${item.cat_two_id}</a></li>
+                    <li class="active">${item.cat_three_id}</li>
+                  </ol>
+                </div>
+                <div class="panel-footer">
+                  <div class="row">
+                    <div class="">
+                      <div class="thumbnail">
+                        <img src="${item.goods_big_logo}" alt="...">
+                        <div class="caption">
+                          <h3>${item.goods_name}</h3>
+                          <p>
+                            <i class="glyphicon glyphicon-yen"></i>
+                            <span>${item.goods_price}</span>
+                          </p>
+                          <p>
+                            <a href="javascript:;" class="btn btn-primary" role="button">查找相似商品</a> 
+                            <a href="./detail.html?goods_id=${item.goods_id}" class="btn btn-danger" role="button">查看商品详情</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            `;
+                    })
+
+                    // 写入标签对象
+                    $('.container ul').html(str);
+                    // 获取数据库数据,根据响应结果,设定分页显示程序
+                    $('.page').pagination({
+                        
+                        pageCount: res.sumPage,    // 总页数
+                        totalData: res.row,         // 数据总数量
+                        current: res.page,          // 当前第几页
+                        showData: res.line,         // 每页数据数量
+                        prevCls: 'prev',            // 上一页的类名  默认是prev有样式效果修改之后样式效果就没有了
+                        nextCls: 'next',            // 下一页的类名
+                        prevContent: '上一页',       // 上一页节点内容 标签中显示的文字内容
+                        nextContent: '下一页',       // 下一页节点内容 标签中显示的文字内容
+                        mode: 'fixed',              // 固定分页显示,页数按钮的数量
+                        count: 4,                   // 分页按钮的数量,不算当前页是4个多余的按钮,一共是5个按钮
+                        coping: true,               // 显示 首页 末页 默认显示 首页末页数值
+                        homePage: '首页',           // 设定首页节点内容 也就是显示的文字 
+                        endPage: '末页',            // 设定末页节点内容 也就是显示的文字 
+                        isHide: true,               // 总页数为 0 或者 1 时 隐藏分页控件
+                        keepShowPN: false,          // 第一页隐藏上一页 最后一页隐藏下一页  mode要设定为 unfixed
+                        jump: true,                 // 开启跳转
+                        // jumpIptCls: '',          // input输入框class类名设定
+                        // jumpBtnCls: '',          // 跳转按钮的类名
+                        jumpBtn: '跳转',            // 跳转按钮的文字内容
+                        callback: function (val) {       // 回调函数
+                            // console.log( val );
+                            // 点击的分页控件(按钮)  对应的页数
+                            // console.log( val.getCurrent() );
+                            // 根据获取的 点击控件 对应的页数,设定变量page
+                            page = val.getCurrent();
+                            // 根据新的 page 的数据 向数据库再次发起请求
+                            // 再次动态渲染生成页面
+                            setPage();
+                        }
+                    });
+                });
+                console.log(page);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
